@@ -62,7 +62,7 @@ def get_version(path):
 def get_full_version(path):
     # 通过启动器json读取版本
     data = open(os.path.join(path, "launcher-settings.json"), 'r', encoding="utf8")
-    return "Circinus " + json.load(data)["version"].strip()
+    return json.load(data)["version"].strip()
 
 def calc_checksum(path):
     files = load_manifest(path)
